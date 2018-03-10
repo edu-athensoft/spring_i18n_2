@@ -1,0 +1,39 @@
+#header{
+	 border:1px solid;
+}
+
+#header li{
+	list-style-type: none;
+	display: inline;
+	
+}
+#header li a{
+	padding: 20px;
+}
+#navi{
+	float: right;
+}
+.clr{
+	clear: both;
+}
+#main{
+	
+	text-align: center;
+}
+#main form{
+	margin: auto;
+	width: 500px;
+	height: 100px;
+			
+}
+
+#footer{
+	width: 100%;
+	border-top: 1px solid;
+	position: absolute;
+	bottom: 0px;
+}
+#footer p{
+	text-align: center;
+}
+

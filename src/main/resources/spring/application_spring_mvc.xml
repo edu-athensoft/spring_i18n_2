@@ -27,6 +27,14 @@
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />  
     </bean>  
       
+     
+        <!-- 国际化资源文件 -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <!-- 表示多语言配置文件在根路径下，以language开头的文件-->
+        <property name="basename" value="classpath:language"/>
+        <property name="useCodeAsDefaultMessage" value="true"/>
+    </bean>
+    
     <!-- 对静态资源文件的访问-->  
     <mvc:resources mapping="/js/**" location="/WEB-INF/js/" />  
     <mvc:resources mapping="/css/**" location="/WEB-INF/css/" />  
