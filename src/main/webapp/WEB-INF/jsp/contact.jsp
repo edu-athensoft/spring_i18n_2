@@ -31,8 +31,8 @@
 					<li>
 						language:<select id="lang" onchange="lanChanged(this)">
 							  <option value ="en" selected="selected">English</option>
-						    <option value ="fr">FranÃ§ais</option>
-						    <option value ="zh">ä¸­æ</option>
+						    <option value ="fr">Français</option>
+						    <option value ="zh">中文</option>
 						</select>
 					</li>
 					

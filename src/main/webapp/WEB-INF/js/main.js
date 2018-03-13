@@ -6,15 +6,16 @@ function saveIndexBeforeChange(){
 
 
 function lanChanged(data){
+	alert(1)
 		var choose=null;
 			switch (data.value){
-				case "zh":
+				case "zh_CN":
 					choose=confirm(" 您确定要选择中文?");
 					break;
-				case "en":
+				case "en_US":
 					choose=confirm(" Are you sure to change the language to English?");
 					break;
-				case "fr":
+				case "fr_CA":
 					choose=confirm("Êtes-vous sûr de vouloir sélectionner le français?");
 					break;
 				default:
@@ -23,7 +24,15 @@ function lanChanged(data){
 			 
 			if(choose){
 			 selectedLang=data.value;
-				redirectToSpecifiedLanguage(selectedLang);
+				//redirectToSpecifiedLanguage(selectedLang);
+			 var data={"selectedLang":selectedLang};
+			 $.ajax({ 
+		            type: "POST",
+		            url: "./lang/change",
+		            data: data,
+		            contentType: "application/x-www-form-urlencoded"
+		        });
+			 
 			}else{
 				document.getElementById("lang").selectedIndex=prevVal;
 			}
