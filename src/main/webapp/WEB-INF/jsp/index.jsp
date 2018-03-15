@@ -35,10 +35,11 @@
 					<li><a href="contact?lang=${loc}">	 <spring:message code="contactus"/></a></li>
 					<li>
 	 			<spring:message code="language"/>:
-							<select id="lang"  onchange="window.location=this.value">
-							<option value ="?lang=en_US"   >English</option>
-						    <option value ="?lang=fr_CA" selected="selected"> Français</option>
-						    <option value ="?lang=zh_CN" >中文</option>
+						<select id="selectLang"  onchange="changeLang(this)">
+							<option value ="#" >--- choose a language ---</option>
+							<option value ="en_US" >English</option>
+						    <option value ="fr_CA" > Français</option>
+						    <option value ="zh_CN" >中文</option>
 						</select>
 					</li>
 					
@@ -49,7 +50,7 @@
 		</div>
 			<div id="main">
 			<p>
-			 ><spring:message code="welcome"/>
+			 <spring:message code="welcome"/>
 
 			</p>
 			
@@ -59,6 +60,16 @@
 		<div id="footer"> 
 			<p>Athensoft &copy;2018</p>
 		</div>
+		
+		
+		<script>
+		$(document).ready(function(){
+			var initLoc = "${loc}";
+			alert("page just loaded in "+initLoc);
+			$("#selectLang").val(initLoc);
+		})
+
+		</script>
 		
 	</body>
 </html>

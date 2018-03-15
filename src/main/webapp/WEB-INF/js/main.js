@@ -5,6 +5,18 @@ function saveIndexBeforeChange(){
 }
 
 
+
+function changeLang(selectElement){
+	var paramPrefix="?lang=";
+	var langValue = selectElement.value;
+	//alert(langValue);
+	window.location = paramPrefix+langValue; 
+	
+	//$("#selectLang").val(langValue);
+}
+
+/*
+
 function lanChanged(data){
 	alert(1)
 		var choose=null;
@@ -38,7 +50,7 @@ function lanChanged(data){
 			}
 		
 }
-
+*/
 function redirectToSpecifiedLanguage(selectedLang){
 
 		var currentPage =location.href.split('athensoft/')[1];

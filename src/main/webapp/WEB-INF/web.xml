@@ -4,6 +4,16 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_mtlpc" version="3.0">
 	
+	 <context-param>    
+        <param-name>contextConfigLocation</param-name>    
+        <!-- 应用上下文配置文件 -->    
+        <param-value>/WEB-INF/conf/spring.xml</param-value>    
+    </context-param>    
+    <listener>    
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>    
+    </listener>    
+	
+	
   <filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
