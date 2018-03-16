@@ -26,5 +26,11 @@ public class TbProduct implements Serializable{
 	private Integer productStatus;
 	private Integer productAmount;
 	private TbProducti18n producti18n;
+	public TbProducti18n getProducti18n() {
+		return producti18n;
+	}
+	public void setProducti18n(TbProducti18n producti18n) {
+		this.producti18n = producti18n;
+	}
 	
 }

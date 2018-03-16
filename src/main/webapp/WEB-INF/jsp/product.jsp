@@ -28,9 +28,9 @@
 			<div id="navi">
 				
 				<ul >
-					<li><a href="index"><spring:message code="aboutus"/></a></li>
-					<li><a href="#">	 <spring:message code="ourproducts"/></a></li>
-					<li><a href="contact_en?lang=en_US">	 <spring:message code="contactus"/></a></li>
+					<li><a href="index?lang=${loc}"><spring:message code="aboutus"/></a></li>
+					<li><a href="product?lang=${loc}">	 <spring:message code="ourproducts"/></a></li>
+					<li><a href="contact?lang=${loc }">	 <spring:message code="contactus"/></a></li>
 					<li>
 					<li>
 					<spring:message code="language"/>:
@@ -48,11 +48,20 @@
 			<div class="clr"></div>
 		</div>
 			<div id="main">
-			<p>
-			<spring:message code="ourproducts"/>
-				</p>
 			
-			
+		<table id="productTable" border="1">
+			  <tr>
+			    <th><spring:message code="productName"/></th>
+			    <th><spring:message code="productDesc"/></th>
+			  </tr>
+			  <c:forEach items="${product}" var="product"> 
+			  
+			  <tr>
+				    <td>${product.producti18n.productName }</td>
+				    <td>${product.producti18n.productDesc}</td>
+			  </tr>
+			  </c:forEach>
+		</table>
 		</div>
 		
 		<div id="footer"> 
@@ -62,7 +71,7 @@
 		<script>
 		$(document).ready(function(){
 			var initLoc = "${loc}";
-			alert("page just loaded in "+initLoc);
+			//alert("page just loaded in "+initLoc);
 			$("#selectLang").val(initLoc);
 		})
 

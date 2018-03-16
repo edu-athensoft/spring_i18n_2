@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,11 +30,15 @@ public class ProductController {
 		this.productService = productService;
 	}
 	  @RequestMapping("product")
+	  
 		public ModelAndView showPage(){
+		  Locale locale = LocaleContextHolder.getLocale();  
+		  String localeStr=(locale.getLanguage()+"-"+locale.getCountry());
+		  System.out.println("controller ");
 	        ModelAndView mov=new ModelAndView();  
-	        
-	       ArrayList<TbProduct> productList= (ArrayList<TbProduct>) productService.findAll();
-	        
+	      ArrayList<TbProduct> productList= (ArrayList<TbProduct>) productService.findAll(localeStr);
+	       
+	       mov.addObject("product",productList);
 	        mov.setViewName("product");  
 	        return mov;  
 		}

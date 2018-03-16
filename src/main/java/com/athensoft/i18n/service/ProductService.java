@@ -21,8 +21,8 @@ public class ProductService {
 		this.productDao = productDao;
 	}
 	
-	public List<TbProduct> findAll(){
-		return productDao.findAll();
+	public List<TbProduct> findAll(String locale){
+		return productDao.findAll(locale);
 	}
 	
 }

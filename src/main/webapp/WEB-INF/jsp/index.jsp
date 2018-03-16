@@ -9,18 +9,22 @@
 <c:if test="${!(empty param.lang)}" >
   <c:set var="loc" value="${param.lang}"/>
 </c:if>
-
+${loc}
 <fmt:setLocale value="${loc}" />
 
 <html>
+	<script>
+	
+	var dlang = (navigator.language || navigator.browserLanguage).toLowerCase();
+	</script>
+
 	<head>
 		<meta charset="utf-8" />
 		<title>athensoft</title>
 		<link rel="stylesheet" href="css/style.css"/>
 	</head>
 	<script src="js/jquery-1.4.2.min.js"></script>
-	<script src="js/main.js">
-	</script>
+	 <script src="js/main.js"> </script>
 	<body>
 	
 		<div id="header">
@@ -30,7 +34,7 @@
 			<div id="navi">
 				
 				<ul >
-					<li><a href="#"><spring:message code="aboutus"/></a></li>
+					<li><a href="index?lang=${loc}"><spring:message code="aboutus"/></a></li>
 					<li><a href="product?lang=${loc}">	 <spring:message code="ourproducts"/></a></li>
 					<li><a href="contact?lang=${loc}">	 <spring:message code="contactus"/></a></li>
 					<li>
@@ -65,8 +69,10 @@
 		<script>
 		$(document).ready(function(){
 			var initLoc = "${loc}";
-			alert("page just loaded in "+initLoc);
+		//	alert("page just loaded in "+initLoc);
 			$("#selectLang").val(initLoc);
+		
+			alert("browser default lang is "+ dlang);  
 		})
 
 		</script>

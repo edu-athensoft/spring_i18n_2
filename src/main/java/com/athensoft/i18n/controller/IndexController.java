@@ -4,7 +4,9 @@ import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,11 +18,13 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping()  
 public class IndexController {
 	
-
+	
 	  @RequestMapping("{page}")
-		public ModelAndView showPage(@PathVariable String page){
+		public ModelAndView showPage(@PathVariable String page,HttpServletRequest request){
+		  
 	        ModelAndView mov=new ModelAndView();  
-	          
+	    	        
+	       System.out.println( request.getRequestURL());
 	    	mov.setViewName(page);  
 	        return mov;  
 		}

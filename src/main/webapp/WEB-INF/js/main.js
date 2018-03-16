@@ -1,7 +1,12 @@
+
+		
 window.onload = saveIndexBeforeChange;
 
 function saveIndexBeforeChange(){
-    prevVal = $("#lang").attr('selectedIndex');
+	
+		//alert(initLoc)
+		 var lang = (navigator.language || navigator.browserLanguage).toLowerCase();
+		//alert("browser default lang is "+ lang); 
 }
 
 

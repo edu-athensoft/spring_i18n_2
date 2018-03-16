@@ -6,7 +6,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/java/test/resources"/>
-        <property name="context-root" value="spring_i18n_1"/>
         <property name="java-output-path" value="/spring_i18n_1/target/classes"/>
+        <property name="context-root" value="spring_i18n_2"/>
     </wb-module>
 </project-modules>

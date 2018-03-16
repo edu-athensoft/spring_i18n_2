@@ -6,5 +6,5 @@ import com.athensoft.i18n.pojo.TbProduct;
 
 public interface ProductDao {
 
-	public List<TbProduct> findAll();
+	public List<TbProduct> findAll(String locale);
 }
