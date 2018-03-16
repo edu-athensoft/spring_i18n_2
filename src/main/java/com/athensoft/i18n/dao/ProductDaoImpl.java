@@ -46,12 +46,12 @@ public class ProductDaoImpl implements ProductDao{
 				+ " where p.id = p18.id "
 				+ "and p18.lang_no= lang.lang_no"
 				+ " and lang.lang_code='"+localeStr+"'";
-		System.out.println(sql);
+		//System.out.println(sql);
 	List<TbProduct> productList =  jdbc.query(sql, new ProductRowMapper());
 		
-		 for (TbProduct tbProduct : productList) {
-				System.out.println("productId "+tbProduct.getProductId());
-			}
+//		 for (TbProduct tbProduct : productList) {
+//				System.out.println("productId "+tbProduct.getProductId());
+//			}
 	
 		return (ArrayList<TbProduct>) productList;
 	}
@@ -60,7 +60,7 @@ public class ProductDaoImpl implements ProductDao{
 
 		public TbProduct mapRow(ResultSet rs, int number) throws SQLException {
 		
-			System.out.println("row number "+ number);
+		//	System.out.println("row number "+ number);
 			TbProduct product = new TbProduct();
 			product.setProductAmount(rs.getInt("product_amount"));
 			product.setProductId(rs.getInt("product_id"));

@@ -21,7 +21,7 @@
     <context:component-scan base-package="com.athensoft.i18n.controller"/>  
   
   <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" >
-  
+  	<property name="defaultLocale" value="en_US"></property>
     </bean>  
     
     

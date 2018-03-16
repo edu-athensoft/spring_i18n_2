@@ -34,7 +34,7 @@ public class ProductController {
 		public ModelAndView showPage(){
 		  Locale locale = LocaleContextHolder.getLocale();  
 		  String localeStr=(locale.getLanguage()+"-"+locale.getCountry());
-		  System.out.println("controller ");
+		//  System.out.println("controller ");
 	        ModelAndView mov=new ModelAndView();  
 	      ArrayList<TbProduct> productList= (ArrayList<TbProduct>) productService.findAll(localeStr);
 	       
