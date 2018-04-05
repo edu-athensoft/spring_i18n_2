@@ -11,7 +11,24 @@
 </c:if>
 
 <fmt:setLocale value="${loc}" />
-<html>
+<html><!-- public void deleteByUsername(String username) {
+		
+		int result = jdbc.update("delete from user where username='"+username+"'");
+		System.out.println(result);
+	} 
+	
+	<a href="${pageContext.request.contextPath}/manage/deleteUser?username=${users.username}" onclick="confirm('delete user?')">delete</a>
+	
+	@RequestMapping("deleteUser")
+	public ModelAndView deleteUser(User user) {
+		ModelAndView modelAndView=new ModelAndView();
+		//System.out.println("123123dd");
+		
+		service.deleteByUsername(user.getUsername());
+		return modelAndView;
+	}
+	
+	-->
 	<head>
 		<meta charset="utf-8" />
 		<title>athensoft</title>
@@ -52,7 +69,7 @@
 		<table id="productTable" border="1">
 			  <tr>
 			    <th><spring:message code="productName"/></th>
-			    <th><spring:message code="productDesc"/></th>
+			    <th><spring:message code="aboutus"/></th>
 			  </tr>
 			  <c:forEach items="${product}" var="product"> 
 			  

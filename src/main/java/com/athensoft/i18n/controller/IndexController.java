@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.i18n.FixedLocaleResolver;
 
 @Controller   
 @RequestMapping()  
@@ -21,10 +22,10 @@ public class IndexController {
 	
 	  @RequestMapping("{page}")
 		public ModelAndView showPage(@PathVariable String page,HttpServletRequest request){
-		  
+		  FixedLocaleResolver localeResolver;
 	        ModelAndView mov=new ModelAndView();  
 	    	        
-	       System.out.println( request.getRequestURL());
+	      // System.out.println( request.getRequestURL());
 	    	mov.setViewName(page);  
 	        return mov;  
 		}

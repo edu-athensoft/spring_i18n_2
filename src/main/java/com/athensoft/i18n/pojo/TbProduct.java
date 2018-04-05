@@ -32,5 +32,8 @@ public class TbProduct implements Serializable{
 	public void setProducti18n(TbProducti18n producti18n) {
 		this.producti18n = producti18n;
 	}
+	public static void main(String[] args) {
+		
+	}
 	
 }

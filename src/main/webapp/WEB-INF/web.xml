@@ -6,8 +6,7 @@
 	
 	 <context-param>    
         <param-name>contextConfigLocation</param-name>    
-        <!-- 应用上下文配置文件 -->    
-        <param-value>/WEB-INF/conf/spring.xml</param-value>    
+        <param-value>classpath*:/spring/spring.xml</param-value>    
     </context-param>    
     <listener>    
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>    

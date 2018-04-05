@@ -9,13 +9,11 @@
 <c:if test="${!(empty param.lang)}" >
   <c:set var="loc" value="${param.lang}"/>
 </c:if>
-${loc}
 <fmt:setLocale value="${loc}" />
 
 <html>
 	<script>
 	
-	var dlang = (navigator.language || navigator.browserLanguage).toLowerCase();
 	</script>
 
 	<head>
@@ -72,7 +70,7 @@ ${loc}
 		//	alert("page just loaded in "+initLoc);
 			$("#selectLang").val(initLoc);
 		
-			alert("browser default lang is "+ dlang);  
+			//alert("browser default lang is "+ dlang);  
 		})
 
 		</script>
